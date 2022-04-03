@@ -26,7 +26,11 @@ cp .env.example .env
 ``` bash
 php artisan key:generate
 ```
-
+## Migrate
+To serve project [http://localhost:8000](http://localhost:8000), by run the following command:
+``` bash
+php artisan migrate --seed
+```
 ## Serve
 
 To serve project [http://localhost:8000](http://localhost:8000), by run the following command:
