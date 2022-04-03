@@ -3,19 +3,30 @@
 A music streaming service wants users to be able to listen to music, upload new songs, edit songs, and delete them.
 
 
-## Install
+## Getting started
 
-To clone repository and install packages, by run the following commands:
+Assuming you've already installed on your machine: PHP (>= 7.0.0), [Git](https://git-scm.com/) and [Composer](https://getcomposer.org).
 
+##### Clone repository
 ``` bash
 git clone https://github.com/devEdrick/music-playlist.git
 ```
 ``` bash
 cd music-playlist
 ```
+##### Install dependencies
 ``` bash
 composer install
 ```
+
+##### Create .env file and generate the application key
+``` bash
+cp .env.example .env
+```
+``` bash
+php artisan key:generate
+```
+
 ## Serve
 
 To serve project [http://localhost:8000](http://localhost:8000), by run the following command:
