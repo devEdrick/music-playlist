@@ -26,6 +26,10 @@ php artisan serve
 ## Documentation
 
 To generate project documentation [http://localhost:8000/api/documentation#/Song](http://localhost:8000/api/documentation#/Song), by run the following command:
+
+``` bash
+php artisan config:cache
+```
 ``` bash
 php artisan l5-swagger:generate
 ```
@@ -34,6 +38,9 @@ php artisan l5-swagger:generate
 
 To unit test, by run the following command:
 
+``` bash
+php artisan config:cache
+```
 ``` bash
 ./vendor/bin/phpunit tests/Feature/SongTest.php
 ```

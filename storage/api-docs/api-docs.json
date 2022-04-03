@@ -1,0 +1,255 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Music Playlist",
+        "description": "Music Playlist REST API",
+        "contact": {
+            "email": ""
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/songs": {
+            "get": {
+                "tags": [
+                    "Song"
+                ],
+                "summary": "Get Songs",
+                "operationId": "getSongsList",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Page Size",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Song"
+                ],
+                "summary": "Create Song",
+                "operationId": "storeSong",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Song Title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "Song Url",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "in": "query",
+                        "description": "Song Duration (Seconds)",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "artist_name",
+                        "in": "query",
+                        "description": "Song Artist Name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entitiy"
+                    }
+                }
+            }
+        },
+        "/api/v1/songs/{id}": {
+            "get": {
+                "tags": [
+                    "Song"
+                ],
+                "summary": "Get Song",
+                "operationId": "showSong",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Song Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Song"
+                ],
+                "summary": "Update Song",
+                "operationId": "updateSong",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Song Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Song Title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "Song Url",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "in": "query",
+                        "description": "Song Duration (Seconds)",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "artist_name",
+                        "in": "query",
+                        "description": "Song Artist Name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entitiy"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Song"
+                ],
+                "summary": "Delete Song",
+                "operationId": "deleteSong",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Song Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    }
+}
